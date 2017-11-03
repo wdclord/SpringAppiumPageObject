@@ -1,21 +1,20 @@
 package content.pages;
 
 import framework.page.Page;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 @Page
 public class LoginPage {
 
-    @FindBy(id = "com.revolut.revolut.test:id/uic_edit_country_code")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/uic_edit_country_code")
     private WebElement countryCodeSelector;
 
-    @FindBy(id = "com.revolut.revolut.test:id/uic_edit_phone_number")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/uic_edit_phone_number")
     private WebElement phoneNumberField;
 
-    @FindBy(id = "com.revolut.revolut.test:id/signup_next")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/signup_next")
     private WebElement nextButton;
-
 
     public void gotoCountryCodeSelectorPage() {
         countryCodeSelector.click();

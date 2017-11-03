@@ -3,9 +3,9 @@ package framework.driver;
 import io.appium.java_client.android.AndroidDriver;
 
 public class DriverPool {
-    public AndroidDriver getDriver(){
+    public static AndroidDriver getAndroidDriver(){
 
-        Mobile mobile = Mobile.ANDROID_7_1_1;
+        Mobile mobile = Mobile.ANDROID;
         return mobile.getDriver();
     }
 }

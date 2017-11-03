@@ -1,15 +1,16 @@
 package Suits.mobile;
 
 import Suits.Suite;
-import content.pages.TutorialPage;
+import content.pages.skip.TutorialPage;
 import content.steps.LoginPageSteps;
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class TutorialPageTest extends Suite {
+
+    @Autowired
+    AndroidDriver driver;
 
     @Autowired
     private LoginPageSteps loginPageSteps;
@@ -17,22 +18,6 @@ public class TutorialPageTest extends Suite {
     @Autowired
     private TutorialPage tutorialPage;
 
-    @Autowired
-    private AndroidDriver driver;
-
-
-    @Before
-    public void setup(){
-        System.out.println("LAUNCH");
-        driver.launchApp();
-    }
-
-
-    @After
-    public void cleanUp(){
-        System.out.println("QUIT");
-        driver.closeApp();
-    }
 
 
     @Test
@@ -42,7 +27,17 @@ public class TutorialPageTest extends Suite {
 
     @Test
     public void skipTutorialPage() {
-        tutorialPage.gotoLoginPage();
+        tutorialPage.clickContinueButton();
+        tutorialPage.clickContinueButton();
+        tutorialPage.clickContinueButton();
+        tutorialPage.clickContinueButton();
+        tutorialPage.clickContinueButton();
+        tutorialPage.clickContinueButton();
+    }
+
+    @Test
+    public void login2() {
+        loginPageSteps.loginToApplication();
     }
 
 }
