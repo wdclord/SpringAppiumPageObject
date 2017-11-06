@@ -1,6 +1,7 @@
 package content.pages.skip;
 
 
+import framework.page.BaseSkipPage;
 import framework.page.Page;
 
 @Page

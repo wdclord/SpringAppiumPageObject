@@ -10,26 +10,33 @@
 
     <properties>
         <selenium.version>3.5.3</selenium.version>
-        <testng.version>6.10</testng.version>
         <htmlelements.version>1.18</htmlelements.version>
-        <!--<spring.version>4.2.1.RELEASE</spring.version>-->
         <spring.version>5.0.1.RELEASE</spring.version>
         <appium.version>5.0.4</appium.version>
         <properties.version>2.0.RC6</properties.version>
         <allure.version>1.5.2</allure.version>
-        <log4j.version>1.2.17</log4j.version>
+        <junit.version>5.0.1</junit.version>
+        <springjunit.version>1.0.0.BUILD-SNAPSHOT</springjunit.version>
+        <javaslang.version>2.0.6</javaslang.version>
+        <lombok.version>1.16.18</lombok.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>ru.yandex.qatools.htmlelements</groupId>
-            <artifactId>htmlelements-java</artifactId>
-            <version>1.18</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
+            <groupId>io.javaslang</groupId>
+            <artifactId>javaslang</artifactId>
+            <version>${javaslang.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
         </dependency>
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
@@ -56,11 +63,6 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>org.testng</groupId>-->
-        <!--<artifactId>testng</artifactId>-->
-        <!--<version>${testng.version}</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>

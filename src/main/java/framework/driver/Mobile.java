@@ -21,7 +21,7 @@ public enum Mobile {
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
                 capabilities.setCapability(MobileCapabilityType.APP, appDir.getAbsolutePath());
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.1");
-                capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY, "com.revolut.ui.tutorial.TutorialActivity");
+                capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY, "com.revolut.*");
 
                 return new AndroidDriver(url, capabilities);
             } catch (MalformedURLException e) {
@@ -40,8 +40,6 @@ public enum Mobile {
                 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
                 capabilities.setCapability(MobileCapabilityType.APP, appDir.getAbsolutePath());
-                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.1");
-                capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY, "com.revolut.ui.login.pin.LoginActivity");
                 capabilities.setCapability(MobileCapabilityType.NO_RESET, "false");
 
                 return new AndroidDriver(url, capabilities);

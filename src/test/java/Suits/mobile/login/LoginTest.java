@@ -1,30 +1,36 @@
 package Suits.mobile.login;
 
-import Suits.Suite;
-import content.pages.skip.TutorialPage;
-import content.steps.LoginPageSteps;
-import org.junit.Test;
+import Suits.BaseTest;
+import content.data.user.User;
+import content.data.user.UserFactory;
+import content.steps.LoginSteps;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class LoginTest extends Suite {
+
+class LoginTest extends BaseTest {
 
     @Autowired
-    private LoginPageSteps loginPageSteps;
+    private LoginSteps loginSteps;
 
+    @Autowired
+    private UserFactory userFactory;
 
     @Test
-    public void firstLogin() {
-        loginPageSteps.loginToApplication();
+    void firstLogin() {
+        loginSteps.loginToApplication(userFactory.getDefaultUser());
     }
 
     @Test
-    public void futherLogin() {
-        loginPageSteps.futherLoginToApplication();
+    void futherLogin() {
+        loginSteps.loginToApplication(userFactory.getDefaultUser());
+
     }
 
     @Test
-    public void login2() {
-        loginPageSteps.loginToApplication();
+    void login2() {
+        loginSteps.loginToApplication(userFactory.getDefaultUser());
+
     }
 
 }

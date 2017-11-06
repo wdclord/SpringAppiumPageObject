@@ -2,6 +2,7 @@ package content.steps;
 
 import content.pages.skip.EnableAdditionalSecurityPage;
 import content.pages.skip.EnableInstantMoneyTransfersPage;
+import content.pages.skip.TransferMoneyGloballyPage;
 import content.pages.skip.TutorialPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,11 +11,13 @@ import org.springframework.stereotype.Component;
 public class SkipPageSteps {
 
     @Autowired
-    TutorialPage tutorialPage;
+    private TutorialPage tutorialPage;
     @Autowired
-    EnableInstantMoneyTransfersPage enableInstantMoneyTransfersPage;
+    private EnableInstantMoneyTransfersPage enableInstantMoneyTransfersPage;
     @Autowired
-    EnableAdditionalSecurityPage enableAdditionalSecurityPage;
+    private EnableAdditionalSecurityPage enableAdditionalSecurityPage;
+    @Autowired
+    private TransferMoneyGloballyPage transferMoneyGloballyPage;
 
     public SkipPageSteps skipTutorialPage() {
         tutorialPage.skipPage();
@@ -24,11 +27,15 @@ public class SkipPageSteps {
     public SkipPageSteps skipEnableInstantMoneyTransfersPage() {
         enableInstantMoneyTransfersPage.skipPage();
         return this;
-
     }
 
     public SkipPageSteps skipEnableAdditionalSecurityPage() {
         enableAdditionalSecurityPage.skipPage();
+        return this;
+    }
+
+    public SkipPageSteps skipTransferMoneyGloballyPage(){
+        transferMoneyGloballyPage.skipPage();
         return this;
     }
 
