@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 
 public abstract class BaseAccountDetailsPage extends AbstractPage {
 
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/mobile_phone")
     private WebElement phoneNumberField;
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/email")
     private WebElement emailAddressField;
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/button_next")
     private WebElement nextButton;
 
     public BaseAccountDetailsPage enterPhoneNumber(String phoneNumber) {

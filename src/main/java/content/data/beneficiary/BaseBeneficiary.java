@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @Accessors(chain = true)
 @Component
-public abstract class BaseBeneficiary {
+public class BaseBeneficiary {
 
     private String country;
     private String currency;
@@ -22,7 +22,7 @@ public abstract class BaseBeneficiary {
     private String city;
 
 
-    // TODO it's not ok. First place to refactor
+    // TODO needs refactoring
     private String firstName;
     private String lastName;
 

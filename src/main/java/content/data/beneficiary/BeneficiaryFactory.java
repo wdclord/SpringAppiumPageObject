@@ -6,12 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BeneficiaryFactory {
 
-
     @Autowired
     private PersonBeneficiary personBeneficiary;
 
     @Autowired
-    static CompanyBeneficiary companyBeneficiary;
+    private CompanyBeneficiary companyBeneficiary;
 
     public BaseBeneficiary getDefaultPersonBeneficiary() {
         return personBeneficiary
@@ -27,7 +26,7 @@ public class BeneficiaryFactory {
 
     public BaseBeneficiary getDefaultCompanyBeneficiary() {
         return companyBeneficiary
-                .setCompanyName("wowsuchcompany")
+                .setCompanyName("MyCompany")
                 .setCountry("United Kingdom")
                 .setCurrency("GBP")
                 .setAccountNUmber("12344321")

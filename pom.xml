@@ -19,9 +19,16 @@
         <springjunit.version>1.0.0.BUILD-SNAPSHOT</springjunit.version>
         <javaslang.version>2.0.6</javaslang.version>
         <lombok.version>1.16.18</lombok.version>
+        <hamcrest.version>1.3</hamcrest.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

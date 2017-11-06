@@ -1,46 +1,57 @@
 package content.pages.beneficiary;
 
+import content.fragments.BeneficiaryBlock;
 import framework.page.AbstractPage;
 import framework.page.Page;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindAll;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Page
-public class BankTransferPage extends AbstractPage{
+public class BankTransferPage extends AbstractPage {
 
-    @AndroidFindBy(xpath = "")
-    private WebElement addNewBeneficiaryButton;
+//    TODO These locator do not work
+//    @AndroidFindBy(id = "com.revolut.revolut.test:id/list_add_new_item_text")
+//    private WebElement addNewBeneficiaryButton;
+//
+//    public void tapAddNewBeneficiaryButton() {
+//        addNewBeneficiaryButton.click();
+//    }
+
+    @Autowired
+    private AndroidDriver driver;
 
     public void tapAddNewBeneficiaryButton(){
-        addNewBeneficiaryButton.click();
+
+//        System.out.println("Page source on Bank Transfer page" +driver.getPageSource());
+
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(400,625).perform();
+
     }
 
 
-    @AndroidFindAll({
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_0"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_1"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_2"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_3"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_4"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_5"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_6"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_7"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_8"),
-            @AndroidBy(id = "com.revolut.revolut.test:id/button_9"),
-    })
-    private List<WebElement> digits;
+//    @AndroidFindAll({
+//            @AndroidBy(id = "com.revolut.revolut.test:id/item_text_content")
+//    })
+    private List<BeneficiaryBlock> beneficiaryBlockList;
 
-    private WebElement getDigit(int digit) {
-        return digits.get(digit);
-    }
+    @Autowired
+    private BeneficiaryBlock beneficiaryBlock;
 
-    public BankTransferPage tapDigit(int digit) {
-        getDigit(digit).click();
-        return this;
+    public BeneficiaryBlock getFirstBeneficiaryBlock(){
+
+        return beneficiaryBlock = beneficiaryBlockList.get(0);
     }
 
 }

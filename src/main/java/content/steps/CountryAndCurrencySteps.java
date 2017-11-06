@@ -1,6 +1,5 @@
 package content.steps;
 
-import content.data.beneficiary.BaseBeneficiary;
 import content.pages.beneficiary.CountryAndCurrencyPage;
 import content.pages.selectors.CountrySelectorPage;
 import content.pages.selectors.CurrencySelectorPage;
@@ -17,11 +16,27 @@ public class CountryAndCurrencySteps {
     @Autowired
     private CurrencySelectorPage currencySelectorPage;
 
-    public void selectCountryAndCurrency(BaseBeneficiary beneficiary) {
+    public CountryAndCurrencySteps openCountrySelector() {
         countryAndCurrencyPage.tapCountrySelector();
-        countrySelectorPage.select(beneficiary.getCountry());
+        return this;
+    }
 
+    public CountryAndCurrencySteps selectCountry(String country) {
+        countrySelectorPage.select(country);
+        return this;
+    }
+
+    public CountryAndCurrencySteps openCurrencySelector() {
         countryAndCurrencyPage.tapCurrencySelector();
-        currencySelectorPage.select(beneficiary.getCurrency());
+        return this;
+    }
+
+    public CountryAndCurrencySteps selectCurrency(String currency) {
+        currencySelectorPage.select(currency);
+        return this;
+    }
+
+    public void clickNextButton() {
+        countryAndCurrencyPage.tapNextButton();
     }
 }

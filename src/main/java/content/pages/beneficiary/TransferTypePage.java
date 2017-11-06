@@ -8,27 +8,27 @@ import org.openqa.selenium.WebElement;
 @Page
 public class TransferTypePage extends AbstractPage {
 
-    @AndroidFindBy(xpath = "")
-    private WebElement toMyselfSelector;
-    @AndroidFindBy(xpath = "")
-    private WebElement toAnotherPersonSelector;
-    @AndroidFindBy(xpath = "")
-    private WebElement toBusinessSelector;
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(xpath = "//*[contains(@text,'To myself')]")
+    private WebElement toMyselfRadioButton;
+    @AndroidFindBy(xpath = "//*[contains(@text,'To another person')]")
+    private WebElement toAnotherPersonRadioButton;
+    @AndroidFindBy(xpath = "//*[contains(@text,'To a business')]")
+    private WebElement toBusinessRadioButton;
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/button_next")
     private WebElement nextButton;
 
     public void selectTransferTypeToMyself() {
-        toMyselfSelector.click();
+        toMyselfRadioButton.click();
         nextButton.click();
     }
 
     public void selectTransferTypeToAnotherPerson() {
-        toAnotherPersonSelector.click();
+        toAnotherPersonRadioButton.click();
         nextButton.click();
     }
 
     public void selectTransferTypeToCompany() {
-        toBusinessSelector.click();
+        toBusinessRadioButton.click();
         nextButton.click();
     }
 }

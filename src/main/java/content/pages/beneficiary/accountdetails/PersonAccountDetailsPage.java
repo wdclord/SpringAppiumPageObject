@@ -8,13 +8,13 @@ import org.openqa.selenium.WebElement;
 @Page
 public class PersonAccountDetailsPage extends BaseAccountDetailsPage {
 
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/first_name")
     private WebElement firstNameField;
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/last_name")
     private WebElement lastNameField;
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/server_field_0")
     private WebElement accountNumberField;
-    @AndroidFindBy(xpath = "")
+    @AndroidFindBy(id = "com.revolut.revolut.test:id/server_field_1")
     private WebElement sortCodeField;
 
     public PersonAccountDetailsPage enterFirstName(String firstName) {
