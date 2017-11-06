@@ -12,6 +12,10 @@ public class CountryAndCurrencySteps {
     @Autowired
     private CountryAndCurrencyPage countryAndCurrencyPage;
     @Autowired
+    private CountryAndCurrencyPage secondTimeCountryAndCurrencyPage;
+    @Autowired
+    private CountryAndCurrencyPage thirdTimeCountryAndCurrencyPage;
+    @Autowired
     private CountrySelectorPage countrySelectorPage;
     @Autowired
     private CurrencySelectorPage currencySelectorPage;
@@ -27,7 +31,7 @@ public class CountryAndCurrencySteps {
     }
 
     public CountryAndCurrencySteps openCurrencySelector() {
-        countryAndCurrencyPage.tapCurrencySelector();
+        secondTimeCountryAndCurrencyPage.tapCurrencySelector();
         return this;
     }
 
@@ -37,6 +41,6 @@ public class CountryAndCurrencySteps {
     }
 
     public void clickNextButton() {
-        countryAndCurrencyPage.tapNextButton();
+        thirdTimeCountryAndCurrencyPage.tapNextButton();
     }
 }

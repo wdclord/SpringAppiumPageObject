@@ -17,6 +17,9 @@ public class AccountDetailsSteps {
 
     public void fillIntoMyselfAccountDetails(BaseBeneficiary beneficiary) {
         personAccountDetailsPage
+                //TODO !!!
+                .enterFirstName(beneficiary.getFirstName())
+                .enterLastName(beneficiary.getLastName())
                 .enterAccountNumber(beneficiary.getAccountNUmber())
                 .enterSortCode(beneficiary.getSortCode())
                 .enterPhoneNumber(beneficiary.getPhoneNumber())

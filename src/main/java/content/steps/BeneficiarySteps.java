@@ -5,7 +5,7 @@ import content.data.user.User;
 import content.pages.beneficiary.TransferTypePage;
 import content.pages.login.PassCodePage;
 import content.pages.login.SmsCodePage;
-import content.pages.skip.BeneficiarySuccessfullPage;
+import content.pages.skip.BeneficiarySuccessfulPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -14,7 +14,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @Component
 public class BeneficiarySteps {
-
 
     @Autowired
     private BankTransferSteps bankTransferSteps;
@@ -29,7 +28,7 @@ public class BeneficiarySteps {
     @Autowired
     private SmsCodePage smsCodePage;
     @Autowired
-    private BeneficiarySuccessfullPage beneficiarySuccessfullPage;
+    private BeneficiarySuccessfulPage beneficiarySuccessfulPage;
 
     @Step("Add new beneficiary to self")
     public void addNewBeneficiaryToMyself(BaseBeneficiary beneficiary, User user) {
@@ -42,7 +41,7 @@ public class BeneficiarySteps {
         accountDetailsSteps.fillIntoMyselfAccountDetails(beneficiary);
         passCodePage.enterPasscode(user.getPasscode());
         smsCodePage.enterSmsCode();
-        beneficiarySuccessfullPage.clickContinueButton();
+        beneficiarySuccessfulPage.clickContinueButton();
     }
 
     @Step("Add new beneficiary to another person")
@@ -56,7 +55,7 @@ public class BeneficiarySteps {
         accountDetailsSteps.fillIntoAnotherPersonAccountDetails(beneficiary);
         passCodePage.enterPasscode(user.getPasscode());
         smsCodePage.enterSmsCode();
-        beneficiarySuccessfullPage.clickContinueButton();
+        beneficiarySuccessfulPage.clickContinueButton();
     }
 
     @Step("Add new beneficiary to company")
@@ -70,8 +69,9 @@ public class BeneficiarySteps {
         accountDetailsSteps.fillIntoCompanyAccountDetails(beneficiary);
         passCodePage.enterPasscode(user.getPasscode());
         smsCodePage.enterSmsCode();
-        beneficiarySuccessfullPage.clickContinueButton();
+        beneficiarySuccessfulPage.clickContinueButton();
     }
+
     @Step("Verifying properties of added beneficiary")
     public void checkAddedPersonBeneficiary(BaseBeneficiary beneficiary) {
         String fullName = beneficiary.getFirstName() + " " + beneficiary.getLastName();

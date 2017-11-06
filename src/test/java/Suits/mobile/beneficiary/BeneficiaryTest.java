@@ -32,7 +32,7 @@ class BeneficiaryTest extends BaseTest {
         loginSteps.loginToApplication(user);
         beneficiarySteps.addNewBeneficiaryToMyself(beneficiary, user);
 //        TODO I have an issue with Bank Transfer page. So i turned off asserts. For more information check issues document
-//        beneficiarySteps.checkAddedPersonBeneficiary(beneficiary);
+        beneficiarySteps.checkAddedPersonBeneficiary(beneficiary);
     }
 
     @Test

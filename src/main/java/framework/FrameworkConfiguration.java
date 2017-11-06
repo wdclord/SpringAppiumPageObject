@@ -24,8 +24,6 @@ public class FrameworkConfiguration {
 
     @Bean
     public AndroidDriver androidDriver() {
-        System.out.println("ALLLLLLLLLLLLLLLLLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooooOOOOOOOOOOOO");
         return getAndroidDriver();
     }
-
 }

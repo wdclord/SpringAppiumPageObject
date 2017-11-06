@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @Page
 public class BankTransferPage extends AbstractPage {
 
-//    TODO These locator do not work
+//    TODO This locator do not work while performing test, but works in AppiumInspector
 //    @AndroidFindBy(id = "com.revolut.revolut.test:id/list_add_new_item_text")
 //    private WebElement addNewBeneficiaryButton;
 //
@@ -31,17 +31,13 @@ public class BankTransferPage extends AbstractPage {
     @Autowired
     private AndroidDriver driver;
 
-    public void tapAddNewBeneficiaryButton(){
-
-//        System.out.println("Page source on Bank Transfer page" +driver.getPageSource());
-
+    public void tapAddNewBeneficiaryButton() {
         TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(400,625).perform();
-
+        touchAction.tap(400, 625).perform();
     }
 
-
-//    @AndroidFindAll({
+// TODO this is for asserts
+//        @AndroidFindAll({
 //            @AndroidBy(id = "com.revolut.revolut.test:id/item_text_content")
 //    })
     private List<BeneficiaryBlock> beneficiaryBlockList;
@@ -49,7 +45,7 @@ public class BankTransferPage extends AbstractPage {
     @Autowired
     private BeneficiaryBlock beneficiaryBlock;
 
-    public BeneficiaryBlock getFirstBeneficiaryBlock(){
+    public BeneficiaryBlock getFirstBeneficiaryBlock() {
 
         return beneficiaryBlock = beneficiaryBlockList.get(0);
     }

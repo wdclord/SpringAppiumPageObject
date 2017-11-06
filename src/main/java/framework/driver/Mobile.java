@@ -20,8 +20,6 @@ public enum Mobile {
                 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
                 capabilities.setCapability(MobileCapabilityType.APP, appDir.getAbsolutePath());
-//                capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Selendroid");
-//                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.1");
                 capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY, "com.revolut.*");
 
                 return new AndroidDriver(url, capabilities);

@@ -21,12 +21,12 @@ public abstract class BaseTest {
 
     @BeforeEach
     public void setup(){
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @AfterEach
     public void cleanup() {
-//        driver.resetApp();
+        driver.resetApp();
     }
 
 }
