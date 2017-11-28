@@ -80,4 +80,12 @@ public class BeneficiarySteps {
         assertThat("Account number does not match expected", bankTransferSteps.checkAccountNumber(beneficiary.getAccountNUmber()));
         assertThat("Sort code does not match expected", bankTransferSteps.checkSortCode(beneficiary.getSortCode()));
     }
+
+    @Step("Verifying properties of added beneficiary")
+    public void checkAddedCompanyBeneficiary(BaseBeneficiary beneficiary) {
+        assertThat("Full name does not match expected", bankTransferSteps.checkCompanyName(beneficiary.getCompanyName()));
+        assertThat("Currency does not match expected", bankTransferSteps.checkCurrency(beneficiary.getCurrency()));
+        assertThat("Account number does not match expected", bankTransferSteps.checkAccountNumber(beneficiary.getAccountNUmber()));
+        assertThat("Sort code does not match expected", bankTransferSteps.checkSortCode(beneficiary.getSortCode()));
+    }
 }
